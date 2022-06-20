@@ -1,12 +1,18 @@
 import React from "react";
 import piggy from "../assets/porco.png";
 import { Checkbox } from "semantic-ui-react";
+import { Select } from 'semantic-ui-react'
 
-const Nav = ({handletoggle}) => {
+
+const Nav = ({handleToggle, handleSort}) => {
+
+	const sortOptions = [
+		{ key: 'name', value: 'name', text: 'name' },
+		{ key: 'weight', value: 'weight', text: 'weight' }]
 
 	return <>
 	<div className="navWrapper">
-					<div class="ui toggle checkbox" onClick={handletoggle}>
+					<div className="ui toggle checkbox" onClick={handleToggle}>
 					<input type="checkbox" name="public"/>
 					<label>Filter greased</label>
 					</div>
@@ -17,6 +23,7 @@ const Nav = ({handletoggle}) => {
 			<span className="normalText">
 				A React App for County Fair Hog Fans
 			</span>	
+		<Select placeholder='Select sort' options={sortOptions} onChange={handleSort} />
 		</div>
 
 	</>

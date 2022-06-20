@@ -6,20 +6,24 @@ import hogs from "../porkers_data";
 
 
 
-
 function App() {
- const [showToggle, setShowToggle]= useState(false)
+ const [showToggle, setShowToggle]= useState(false);
+ const [sortBy, setSortBy]=useState("")
 
- function handletoggle(){
+ function handleToggle(){
 	setShowToggle(!showToggle)
+ }
+
+ function handleSort(e){
+	setSortBy(e.target.textContent)
  }
 
 
 
 	return (
 		<div className="App">
-			<Nav handletoggle={handletoggle} />
-			<CardContainer hogs={hogs} handleToggle={showToggle}/>
+			<Nav handleToggle={handleToggle} />
+			<CardContainer hogs={hogs} handleToggle={showToggle} handleSort={handleSort} sortBy={sortBy}/>
 		</div>
 	);
 }
