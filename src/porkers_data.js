@@ -11,7 +11,7 @@ const hogs = [
   {
     name: "Porkchop",
     specialty: "Making friends",
-    greased: true,
+    greased: true, 
     weight: 1.6,
     "highest medal achieved": "silver",
     image:
